@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADACLOUDS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Side Menu -->
+    <div class="side-menu">
+      <div class="logo">
+        <img src="logo.png" alt="Weather App Logo" />
+      </div>
+      <ul>
+        <li><a href="index.html" id="dashboard">Dashboard</a></li>
+        <li><a href="table.html" id="tables">Tables</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Header with Search Bar and Get Weather Button -->
+      <div class="header">
+        <input type="text" placeholder="Search city..." id="city-input">
+        <button id="get-weather-btn" style="background-color: #2c3e50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Get Weather</button>
+
+        <div class="user-profile">User</div>
+      </div>
+
+      <!-- Weather Widget for Current Weather -->
+      <div id="weather-widget" class="weather-widget">
+        <h1 class="city-name">City</h1>
+        <p class="weather-description">Weather Description</p>
+        <p class="temperature">Temperature: <span id="temp">--</span>°C</p>
+        <p class="humidity">Humidity: <span id="humidity">--</span>%</p>
+        <p class="wind-speed">Wind Speed: <span id="wind-speed">--</span> m/s</p>
+        <img id="weather-icon" src="" alt="Weather Icon" />
+      </div>
+
+      <!-- Chart Boxes -->
+      <div class="chart-container">
+        <!-- Box for Vertical Bar Chart -->
+        <div class="chart-box">
+          <h2>Temperature for Next 5 Days</h2>
+          <canvas id="barChart" width="400" height="200"></canvas>
+        </div>
+        <!-- Box for Doughnut Chart -->
+        <div class="chart-box">
+          <h2>Weather Conditions</h2>
+          <canvas id="doughnutChart" width="400" height="200"></canvas>
+        </div>
+        <!-- Box for Line Chart -->
+        <div class="chart-box">
+          <h2>Temperature Changes</h2>
+          <canvas id="lineChart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

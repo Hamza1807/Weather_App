@@ -1,0 +1,240 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e8f4f8;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styling */
+.side-menu {
+    background-color: #283845;
+    color: #fff;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100%;
+}
+
+.side-menu .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.side-menu .logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 10px 0;
+}
+
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.side-menu ul li a:hover {
+    background-color: #3b4f5c;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Bar (Search and User Profile) */
+.top-bar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#city-input {
+    padding: 10px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Updated button styling */
+#get-forecast-btn {
+    padding: 12px 24px;
+    background-color: #3a8d99; /* Button background color similar to the screenshot */
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Adjust the border-radius to 5px to match the screenshot */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    transition: background-color 0.3s ease-in-out;
+}
+
+#get-forecast-btn:hover {
+    background-color: #2f6f79; /* Darker shade on hover */
+}
+
+/* User Profile Button */
+.user-profile {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #3b4f5c;
+    color: #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Weather widget */
+.weather-widget {
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 15px;
+    color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px; /* Increased height for better balance */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Add a slight dark overlay for better readability */
+    position: relative;
+}
+
+.weather-widget h1 {
+    font-size: 56px; /* Larger font for city name */
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.weather-widget p {
+    font-size: 22px; /* Increased size for weather details */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 5px;
+}
+
+#weather-icon {
+    width: 100px; /* Increased size for weather icon */
+    height: 100px;
+    margin-top: 20px;
+}
+
+/* Chart container */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.chart-box {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.chart-box h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #city-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .user-profile {
+        position: relative;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .weather-widget {
+        height: auto;
+    }
+
+    .chart-container {
+        flex-direction: column;
+    }
+
+    .chart-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

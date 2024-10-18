@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADACLOUDS</title>
+  <link rel="stylesheet" href="table-style.css">
+  
+</head>
+
+<body>
+  <div class="container">
+    <!-- Side Menu -->
+    <div class="side-menu">
+      <div class="logo">
+        <img src="logo.png" alt="Weather App Logo" />
+      </div>
+      <ul>
+        <li><a href="index.html" id="dashboard">Dashboard</a></li>
+        <li><a href="table.html" id="tables">Tables</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Search Bar and User Profile -->
+      <div class="top-bar">
+        <input type="text" placeholder="Search city..." id="city-input">
+        <button id="get-forecast-btn">Get 5-Day Forecast</button>
+        <div class="user-profile">User</div>
+      </div>
+
+      <!-- Unit Conversion Toggle -->
+      <div class="unit-toggle">
+        <label for="unit-toggle">Unit:</label>
+        <button id="unit-toggle-btn">Celsius</button>
+      </div>
+
+      <!-- Table Section -->
+      <div class="content">
+        <div class="table-area">
+          <h2>5-day Weather Forecast</h2>
+          <div id="loading-spinner" class="spinner hidden"></div>
+          <table id="forecast-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Date</th>
+                <th>Temperature</th>
+                <th>Description</th>
+                <th>Weather Icon</th>
+              </tr>
+            </thead>
+            <tbody id="forecast-table-body">
+              <!-- Forecast data will be populated here -->
+            </tbody>
+          </table>
+
+          <!-- Pagination Controls -->
+          <div class="pagination-controls">
+            <button id="prev-btn" disabled>Previous</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn">Next</button>
+          </div>
+
+          <!-- Filter Controls -->
+          <div class="filter-controls">
+            <button id="sort-asc-btn">Sort by Temperature (Ascending)</button>
+            <button id="sort-desc-btn">Sort by Temperature (Descending)</button>
+            <button id="filter-rain-btn">Filter by Rain</button>
+            <button id="highest-temp-btn">Show Highest Temperature Day</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+      <div class="chat-header">
+        <button id="chat-toggle">
+          <span>Weather Assistant</span>
+          <span class="open-chat">Open Chat</span>
+          <span class="close-chat" style="display: none;">Close Chat</span>
+        </button>
+      </div>
+      <div id="chat-window">
+        <div id="chatAnswerArea"></div>
+        <div id="typing-indicator">Bot is typing...</div>
+        <div id="api-key-setup">
+          <p>Please enter your Gemini API key to continue:</p>
+          <input type="text" id="api-key-input" placeholder="Enter API key">
+          <button id="save-key">Save Key</button>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="Ask about weather...">
+          <button id="searchButton">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="table-script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
